@@ -1,0 +1,83 @@
+/*mobile device responsive design*/
+@import "parameter";
+@media screen and (max-width: 767px) {
+  body {
+    padding-top: @nav-height;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .navbar-default {
+    .navbar-brand {
+      height: @nav-height / 2;
+      top: 50%;
+      img {
+        width: 43.5px;
+        height: 40px;
+      }
+    }
+    .navbar-title {
+      text-decoration: none;
+      h1 {
+        font-size: 20px;
+        width: 400px;
+        font-weight: bold;
+        color: rgb(44, 142, 120);
+        &:hover {
+          color: rgba(0, 0, 0, 0.7);
+        }
+      }
+    }
+  }
+
+  .navbar-default .navbar-nav > li > a {
+    font-size: 14px;
+    font-weight: bold;
+    color: #666;
+    height: 35px;
+    line-height: @nav-height / 4;
+  }
+
+  #myCarousel {
+    height: 225px;
+    margin-top: -20px;
+    right: 0;
+    .carousel-inner .item .carousel-caption {
+      position: absolute;
+      height: 225px;
+      z-index: 1000;
+      top: 0;
+      .btn {
+        z-index: 10000;
+        position: absolute;
+        height: 30px;
+        width: 100px;
+        font-size: 10px;
+        bottom: 20%;
+        margin-left: -50px;
+      }
+    }
+    img {
+      width: 100%;
+      height: 225px;
+    }
+  }
+
+  .about {
+    padding: 80px 0;
+    &:nth-of-type(1) {
+      background: #f8f8f8;
+    }
+    &:nth-of-type(2) {
+      background: #f1f1f1;
+    }
+    h2 {
+      font-weight: bold;
+      font-size:20px;
+    }
+    p {
+      line-height: 15px;
+      font-size: 12px;
+    }
+  }
+}

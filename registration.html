@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign up</title>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/registration.css">
+    <link rel="stylesheet" href="css/lib/font-awesome.min.css">
+</head>
+<div class="wrapper">
+<body ng-app="myApp" ng-controller="SignUpController">
+    <form name="signUpForm" ng-submit="submitForm()" >
+        <div class="form-group" ng-class="{'has-success':signUpForm.username.$valid}">
+            <label>User Name:</label>
+            <input name="username" placeholder="4 to 16 characters" type="text" class="form-control" ng-model="userdata.username" ng-minlength="4" ng-maxlength="16" required>
+            <p class="fa fa-check input_result success" ng-if="signUpForm.username.$valid"></p>
+            <p class="error" ng-if="signUpForm.username.$error.required && signUpForm.username.$touched">User name cannot be empty</p>
+            <p class="error" ng-if="(signUpForm.username.$error.minlength || signUpForm.username.$error.maxlength) && signUpForm.username.$touched">User name should be between 4 and 16 characters</p>
+        </div>
+        <div class="form-group" ng-class="{'has-success':signUpForm.password.$valid}">
+            <label>Password:</label>
+            <input name="password" id="password" placeholder="6 to 12 characters" type="password" class="form-control" ng-model="userdata.password" ng-minlength="6" ng-maxlength="12" required>
+            <p class="fa fa-check input_result success" ng-if="signUpForm.password.$valid"></p>
+            <p class="error" ng-if="signUpForm.password.$error.required && signUpForm.password.$touched">Password cannot be empty</p>
+            <p class="error" ng-if="(signUpForm.password.$error.minlength || signUpForm.password.$error.maxlength) &&signUpForm.password.$touched">Password should be between 6 and 12 characters</p>
+        </div>
+        <div class="form-group" ng-class="{'has-success':signUpForm.password2.$valid}">
+            <label>Confirm Password:</label>
+            <input name="password2" placeholder="re-enter password" type="password" class="form-control" ng-model="userdata.password2" pw-check="password" required>
+            <p class="fa fa-check input_result success" ng-if="signUpForm.password2.$valid"></p>
+            <p class="error" ng-if="signUpForm.password2.$error.pwcheck && signUpForm.password2.$touched">Password doesn't match</p>
+            <p class="error" ng-if="signUpForm.password2.$error.required && signUpForm.password2.$touched">Password cannot be empty</p>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+<script src="js/lib/angular.min.js"></script>
+<script src="js/lib/jquery-3.1.1.js"></script>
+<script src="js/lib/bootstrap.js"></script>
+<script src="js/registration.js"></script>
+</body>
+</html>
