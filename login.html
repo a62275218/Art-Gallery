@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/registration.css">
+    <script src="js/login.js"></script>
+</head>
+<body ng-app="loginPost" ng-controller="loginController">
+<div class="container">
+    <div>
+        <label>User Name:</label>
+        <input name="username" placeholder="Your username" type="text" class="form-control" ng-model="username"
+               ng-minlength="4" ng-maxlength="16" required>
+        <label>Password:</label>
+        <input name="password" placeholder="Your password" type="password" class="form-control" ng-model="password"
+               ng-minlength="4" ng-maxlength="18" required>
+        <button class="btn btn-success" ng-click="login()">Login</button>
+        <br>
+        <span>{{responseMessage}}</span>
+    </div>
+</div>
+<script src="js/lib/angular.min.js"></script>
+<script src="js/lib/jquery-3.1.1.js"></script>
+<script src="js/lib/bootstrap.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>

@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="css/registration.css">
     <link rel="stylesheet" href="css/lib/font-awesome.min.css">
 </head>
+<body ng-app="registrationPost" ng-controller="SignUpController" action="index.html">
 <div class="wrapper">
-<body ng-app="myApp" ng-controller="SignUpController">
-    <form name="signUpForm" ng-submit="submitForm()" >
+    <form name="signUpForm" ng-submit="submitForm()" action="registration.php">
         <div class="form-group" ng-class="{'has-success':signUpForm.username.$valid}">
             <label>User Name:</label>
             <input name="username" placeholder="4 to 16 characters" type="text" class="form-control" ng-model="userdata.username" ng-minlength="4" ng-maxlength="16" required>
@@ -31,8 +31,17 @@
             <p class="error" ng-if="signUpForm.password2.$error.pwcheck && signUpForm.password2.$touched">Password doesn't match</p>
             <p class="error" ng-if="signUpForm.password2.$error.required && signUpForm.password2.$touched">Password cannot be empty</p>
         </div>
+        <div class="form-group" ng-class="{'has-success':signUpForm.email.$valid}">
+            <label>Email:</label>
+            <input name="email" placeholder="Your email address" type="email" class="form-control"
+                   ng-model="userdata.email" required>
+            <p class="fa fa-check input_result success" ng-if="signUpForm.email.$valid"></p>
+            <p class="error" ng-if="signUpForm.email.$error.required && signUpForm.email.$touched">Email cannot be
+                empty</p>
+            <p class="error" ng-if="signUpForm.email.$error.email && signUpForm.email.$touched">Email is incorrect</p>
+        </div>
         <div class="form-group">
-            <button class="btn btn-primary">Submit</button>
+            <button class="btn btn-primary" ng-disabled="!signUpForm.$valid" ng-click="insertData()">Submit</button>
         </div>
     </form>
 </div>

@@ -1,38 +1,41 @@
 /**
  * Created by Jake on 2017/1/11 0011.
  */
-var app = angular.module('myApp',[])
-    app.controller('SignUpController',function($scope)
+var app = angular.module('registrationPost', []);
+app.controller('SignUpController', function ($scope, $http)
     {
-        $scope.userdata = {
-
-        };
+        $scope.userdata = {};
         $scope.submitForm = function(){
             console.log($scope.userdata);
             if($scope.signUpForm.$invalid){
-                alert('no')
+                alert('invalid input')
             }else{
-                alert('yes')
+                alert('sign up success!')
             }
         }
-    })
-/*
-    .directive('compare',function(){
-    var o = {};
-    o.strict = 'AE';
-    o.scope = {
-        orgText: '=compare'
-    }
-    o.require = 'ngModel';
-    o.link = function(sco, ele, att, con){
-        con.$validators.compare = function(v){
-            return v == sco.orgText;
+        $scope.insertData = function () {
+            $http.post('registration.php', {
+                'username': $scope.userdata.username,
+                'password': $scope.userdata.password,
+                'email': $scope.userdata.email
+            }).then(function success(response) {
+                console.log("insert successfully");
+            }, function error(response) {
+                console.log("insert failed");
+            });
+            /*var request = $http({
+             method:"post",
+             url:"registration.php",
+             data:{
+             username:$scope.userdata.username,
+             password:$scope.userdata.password,
+             email:$scope.userdata.email
+             },
+             headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+             })*/
         }
-        sco.$watch('orgText',function(){
-            con.$validate();
-        })
-    }
-});*/
+    });
+
     app.directive('pwCheck', function() {
         return {
             require: 'ngModel',
