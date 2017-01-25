@@ -30,13 +30,31 @@ body {
   }
 }
 
-.navbar-default .navbar-nav > li > a {
-  font-size: 28px;
-  font-weight: bold;
-  color: #666;
-  height: 70px;
-  line-height: @nav-height / 2;
+.navbar-default .navbar-nav {
+  span {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    color: #666;
+    height: 40px;
+    line-height: 0;
+  }
+  li a {
+    font-size: 28px;
+    font-weight: bold;
+    color: #666;
+    height: 70px;
+    line-height: @nav-height / 2;
+  }
+  .userhello {
+    height: 30px;
+    width: 100px;
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: @nav-height / 3;
+  }
 }
+
 
 .navbar-toggle {
   margin-top: 17px;

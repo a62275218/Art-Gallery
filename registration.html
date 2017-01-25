@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="css/registration.css">
     <link rel="stylesheet" href="css/lib/font-awesome.min.css">
 </head>
-<body ng-app="registrationPost" ng-controller="SignUpController" action="index.html">
+<body>
 <div class="wrapper">
-    <form name="signUpForm" ng-submit="submitForm()" action="registration.php">
+    <form name="signUpForm" ng-submit="submitForm()">
         <div class="form-group" ng-class="{'has-success':signUpForm.username.$valid}">
             <label>User Name:</label>
             <input name="username" placeholder="4 to 16 characters" type="text" class="form-control" ng-model="userdata.username" ng-minlength="4" ng-maxlength="16" required>
@@ -48,6 +48,6 @@
 <script src="js/lib/angular.min.js"></script>
 <script src="js/lib/jquery-3.1.1.js"></script>
 <script src="js/lib/bootstrap.js"></script>
-<script src="js/registration.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>

@@ -26,12 +26,27 @@ body {
 .navbar-default .navbar-title h1:hover {
   color: rgba(0, 0, 0, 0.7);
 }
-.navbar-default .navbar-nav > li > a {
+.navbar-default .navbar-nav span {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  color: #666;
+  height: 40px;
+  line-height: 0;
+}
+.navbar-default .navbar-nav li a {
   font-size: 28px;
   font-weight: bold;
   color: #666;
   height: 70px;
   line-height: 55px;
+}
+.navbar-default .navbar-nav .userhello {
+  height: 30px;
+  width: 100px;
+  display: inline-block;
+  margin-left: 20px;
+  margin-top: 36.66666667px;
 }
 .navbar-toggle {
   margin-top: 17px;

@@ -11,8 +11,8 @@ $sql = "SELECT userID FROM users WHERE  username='$username' AND password='$pass
 $result = mysqli_query($con, $sql);
 $count = mysqli_num_rows($result);
 if ($count > 0) {
-    echo "1";
-} else {
-    echo "0";
+    session_start();
+    $_SESSION['uid'] = uniqid();
+    echo $_SESSION['uid'];
 }
 ?>
