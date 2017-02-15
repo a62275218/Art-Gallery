@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/list.css">
+</head>
+<body>
+<div class="container projects">
+    <div class="row piclist">
+        <div class="col-xs-8 col-sm-6 col-md-4 col-lg-3 wow zoomIn" ng-repeat="item in items">
+            <div class="thumbnail">
+                <img id="{{item.id}}" class="img-responsive pic" ng-src="{{item.url}}"/>
+                <div class="caption">
+                    <span>{{item.caption}}</span>
+                    <p>price: {{item.price|currency}}</p>
+                </div>
+                <button type="button" class="btn btn-warning center-block" ng-click="addItem(item.id-1)">Add to cart
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="cart row">
+        <div class="drag-section">
+            <h1>Drag and drop the items you want here</h1>
+        </div>
+        <div class="list able-responsive table-striped">
+            <table class="table table-bordered table-hover" ng-if="cart.length!=0">
+                <thead>
+                <tr class="warning">
+                    <th>Item Name</th>
+                    <th colspan="">Quantity</th>
+                    <th>Price</th>
+                    <th>Operation</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="info r{{product.id}}" ng-repeat="product in cart">
+                    <td>{{product.name}}</td>
+                    <td width="300">
+                        <button type="button" ng-click="reduce(product.id)" class="btn-xs btn btn-primary">-</button>
+                        <input type="text" style="width:30px" value="{{product.quantity}}" ng-model="product.quantity"/>
+                        <button type="button" ng-click="add(product.id)" class="btn-xs btn btn-primary">+</button>
+                    </td>
+                    <td>{{product.price*product.quantity|currency}}</td>
+                    <td>
+                        <button type="button" ng-click="remove(product.id)" class="btn btn-danger">remove</button>
+                    </td>
+                </tr>
+                <tr class="warning">
+                    <td></td>
+                    <td><b>Total Quantity: </b>{{totalQuantity()}}</td>
+                    <td><b>Total Price: </b>{{totalPrice()|currency}}</td>
+                    <td>
+                        <button type="button" class="btn btn-success">Commit to buy</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="btn-group resize">
+    <button type="button" class="btn btn-default btn-circle minus" ng-click="reduceSize()"><i
+            class="glyphicon glyphicon-minus-sign"></i></button>
+    <button type="button" class="btn btn-default btn-circle plus" ng-click="addSize()"><i
+            class="glyphicon glyphicon-plus-sign"></i></button>
+</div>
+</body>
+</html>
