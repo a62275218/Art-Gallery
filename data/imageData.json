@@ -1,68 +1,90 @@
 [
   {
+    "id": 1,
     "fileName": "1.jpg",
     "caption": "123",
     "desc": "123",
-    "url": "img/gallery/1.jpg"
+    "url": "img/gallery/1.jpg",
+    "price": 24
   },
   {
+    "id": 2,
     "fileName": "2.jpg",
     "caption": "123",
     "desc": "123",
-    "url": "img/gallery/2.jpg"
+    "url": "img/gallery/2.jpg",
+    "price": 32
   },
   {
+    "id": 3,
     "fileName": "3.jpg",
     "caption": "123",
     "desc": "123",
-    "url": "img/gallery/3.jpg"
+    "url": "img/gallery/3.jpg",
+    "price": 43
   },
   {
+    "id": 4,
     "fileName": "4.jpg",
     "caption": "123",
     "desc": "123",
-    "url": "img/gallery/4.jpg"
+    "url": "img/gallery/4.jpg",
+    "price": 25
   },
   {
+    "id": 5,
     "fileName": "5.jpg",
     "caption": "123",
     "desc": "123",
-    "url": "img/gallery/5.jpg"
+    "url": "img/gallery/5.jpg",
+    "price": 67
   },
   {
+    "id": 6,
     "fileName": "6.jpg",
     "caption": "123",
     "desc": "123",
-    "url": "img/gallery/6.jpg"
+    "url": "img/gallery/6.jpg",
+    "price": 31
   },
   {
+    "id": 7,
     "fileName": "7.jpg",
     "caption": "123",
     "desc": "123",
-    "url": "img/gallery/7.jpg"
+    "url": "img/gallery/7.jpg",
+    "price": 64
   },
   {
+    "id": 8,
     "fileName": "8.jpg",
     "caption": "123",
     "desc": "123",
-    "url": "img/gallery/8.jpg"
+    "url": "img/gallery/8.jpg",
+    "price": 76
   },
   {
+    "id": 9,
     "fileName": "9.jpg",
     "caption": "123",
     "desc": "123",
-    "url": "img/gallery/9.jpg"
+    "url": "img/gallery/9.jpg",
+    "price": 14
   },
   {
+    "id": 10,
     "fileName": "10.jpg",
     "caption": "123",
     "desc": "123",
-    "url": "img/gallery/10.jpg"
+    "url": "img/gallery/10.jpg",
+    "price": 98
   },
   {
+    "id": 11,
     "fileName": "11.jpg",
     "caption": "123",
     "desc": "123",
-    "url": "img/gallery/11.jpg"
+    "url": "img/gallery/11.jpg",
+    "price": 78
   }
 ]

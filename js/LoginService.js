@@ -1,4 +1,3 @@
-'use strict';
 app.factory('LoginService', function ($location, $http, sessionService, $rootScope, AuthenticationService) {
     return {
         login: function (scope) {

@@ -1,12 +1,12 @@
 /*mobile device responsive design*/
 @media screen and (max-width: 767px) {
   body {
-    padding-top: 110px;
+    padding-top: 130px;
     padding-left: 0;
     padding-right: 0;
   }
   .navbar-default .navbar-brand {
-    height: 55px;
+    height: 65px;
     top: 50%;
   }
   .navbar-default .navbar-brand img {
@@ -30,11 +30,15 @@
     font-weight: bold;
     color: #666;
     height: 35px;
-    line-height: 27.5px;
+    line-height: 32.5px;
+  }
+  .navbar-header {
+    margin: 0 auto;
+    width: 100%;
   }
   #myCarousel {
     height: 225px;
-    margin-top: -20px;
+    margin-top: -40px;
     right: 0;
   }
   #myCarousel .carousel-inner .item .carousel-caption {
@@ -72,5 +76,13 @@
   .about p {
     line-height: 15px;
     font-size: 12px;
+  }
+  .drag-section {
+    display: none;
+  }
+}
+@media screen and (min-width: 767px) and (max-width: 1210px) {
+  .navbar-header {
+    display: none;
   }
 }

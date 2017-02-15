@@ -5,5 +5,10 @@ app.controller('LoginCtrl', ['$scope', 'LoginService', function ($scope, LoginSe
     }
     $scope.logout = function () {
         LoginService.logout($scope);
+        $('.navbar-collapse').collapse('hide');
     }
+
+    /*$scope.hide = function(){
+     $('.navbar-collapse').collapse('hide');
+     }*/
 }]);

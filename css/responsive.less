@@ -38,9 +38,14 @@
     line-height: @nav-height / 4;
   }
 
+  .navbar-header {
+    margin: 0 auto;
+    width: 100%;
+  }
+
   #myCarousel {
     height: 225px;
-    margin-top: -20px;
+    margin-top: -40px;
     right: 0;
     .carousel-inner .item .carousel-caption {
       position: absolute;
@@ -79,5 +84,15 @@
       line-height: 15px;
       font-size: 12px;
     }
+  }
+
+  .drag-section {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1210px) {
+  .navbar-header {
+    display: none;
   }
 }
