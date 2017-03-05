@@ -13,7 +13,10 @@ app.controller('listCtrl', function ($scope, $http, $timeout) {
             containment: ".projects",
             cursor: "move",
             helper: "clone",
-            zIndex: 9999
+            zIndex: 999999,
+            drag: function () {
+                $('.pic').removeClass('zoomIn');
+            }
         });
     }, 1000);
     /*set the droppable section*/

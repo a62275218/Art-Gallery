@@ -9,9 +9,9 @@
 <body>
 <div class="container projects">
     <div class="row piclist">
-        <div class="col-xs-8 col-sm-6 col-md-4 col-lg-3 wow zoomIn" ng-repeat="item in items">
+        <div class="col-xs-8 col-sm-6 col-md-4 col-lg-3 " ng-repeat="item in items">
             <div class="thumbnail">
-                <img id="{{item.id}}" class="img-responsive pic" ng-src="{{item.url}}"/>
+                <img id="{{item.id}}" class="img-responsive pic wow zoomIn" ng-src="{{item.url}}"/>
                 <div class="caption">
                     <span>{{item.caption}}</span>
                     <p>price: {{item.price|currency}}</p>

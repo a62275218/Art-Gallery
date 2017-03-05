@@ -15,37 +15,69 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         .state('list', {
             url: '/itemList',
             templateUrl: 'itemList.html',
-            controller: 'listCtrl'
+            controller: 'listCtrl',
+            authorization: true,
+            redirectTo: 'login'
         })
         .state('registration', {
             url: '/registration',
             templateUrl: 'registration.html',
             controller: 'SignUpCtrl'
         })
+        .state('messageBoard', {
+            url: '/messageBoard',
+            templateUrl: 'messageBoard.html',
+            controller: 'messageCtrl'
+        })
 });
 
-app.run(function ($rootScope, $location, $cookies, LoginService, $http) {
+app.run(function ($rootScope, $location, $cookies, LoginService, $http, $anchorScroll) {
     // keep user logged in after page refresh//
     $rootScope.globals = $cookies.getObject('globals') || {};
-    if ($rootScope.globals.currentUser) {
-        $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata;
-    }
-    $rootScope.$on('$routeChangeStart', function () {
-        if ($rootScope.globals.currentUser = "") {
+    $rootScope.$on('$stateChangeStart', function (event, toState) {
+        console.log($rootScope.globals.currentUser);
+        //scroll to top for each state
+        $location.hash('top');
+        $anchorScroll();
+        //block access when user not logged in
+        if (!$rootScope.globals.currentUser && toState.authorization) {
             $location.path('/login');
-        } else {
-            //do nothing if user logged in
         }
     });
+    //document load function
     $(function () {
-        new WOW().init();
-        /*initially collapsed navbar*/
+        //loading animation
+        setTimeout(function () {
+            $('body').addClass('loaded');
+            //initiate wow.js
+            new WOW().init();
+        }, 3000);
+        //initially collapsed navbar
         $('.navbar-collapse').collapse('hide');
         $('.carousel').carousel({
             interval: 2000
-        })
-        /*$('.navbar-collapse li a').click(function(){
-         $('.navbar-collapse').collapse('hide');
-         });*/
+        });
+        //click the scroll to top button
+        $('#backTop').on('click', move);
+        $(window).on('scroll', function () {
+            checkPosition(200);
+        });
+        //check if it is necessary to show scroll top button when page loaded
+        checkPosition(200);
+        //move to top function
+        function move() {
+            $('html, body').animate({
+                scrollTop: 0
+            }, 800);
+        }
+
+        //check position
+        function checkPosition(pos) {
+            if ($(window).scrollTop() > pos) {
+                $('#backTop').fadeIn();
+            } else {
+                $('#backTop').fadeOut();
+            }
+        }
     });
 });

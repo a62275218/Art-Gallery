@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--css-->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1 , user-scalable=no">
@@ -11,10 +12,34 @@
     <link rel="stylesheet" href="js/lib/jquery-ui.css">
     <link href="//cdn.bootcss.com/fakeLoader/1.1.0/fakeLoader.css">
     <link rel="stylesheet" href="css/lib/animate.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <!--js-->
+    <script src="js/lib/angular.min.js"></script>
+    <script src="//unpkg.com/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="//code.angularjs.org/1.6.0/angular-cookies.min.js"></script>
+    <script src="js/lib/jquery-3.1.1.js"></script>
+    <script src="js/lib/jquery.transit.js"></script>
+    <script src="js/lib/ui-bootstrap-tpls-2.4.0.min.js"></script>
+    <script src="js/lib/bootstrap.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/registration.js"></script>
+    <script src="js/sessionService.js"></script>
+    <script src="js/LoginService.js"></script>
+    <script src="js/MessgaeBoard.js"></script>
+    <script src="js/AuthenticationService.js"></script>
+    <script src="js/list.js"></script>
+    <script src="js/lib/jquery-ui.js"></script>
+    <script src="js/lib/wow.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
 
 </head>
 <body ng-app="artGallery" ng-controller="LoginCtrl">
-
+<div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+</div>
 <div class="navbar navbar-default navbar-fixed-top">
     <div class="container index-content">
         <div class="navbar-inner">
@@ -25,7 +50,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <div class="navbar-brand"><img src="img/wings.png" class="img-circle img-responsive"/></div>
+                <div ng-cloak class="navbar-brand"><img src="img/wings.png" class="img-circle img-responsive"/></div>
                 <div class="navbar-title"><h1><a href="index.html">Art Gallery</a></h1></div>
             </div>
 
@@ -36,8 +61,9 @@
                     <li><a ui-sref="list">Shopping</a></li>
                     <li><a ui-sref="registration">Sign Up</a></li>
                     <li><a ng-if="!globals.currentUser.username" ui-sref="login">Log In</a></li>
-                    <li><a ng-if="globals.currentUser.username" ng-click="logout()" ui-sref="home">Log Out</a></li>
-                    <div class="userhello" ng-if="globals.currentUser.username"><span
+                    <li><a ng-cloak ng-if="globals.currentUser.username" ng-click="logout()" ui-sref="home">Log Out</a>
+                    </li>
+                    <div class="userhello" ng-cloak ng-if="globals.currentUser.username"><span
                             ng-bind="'Hello    '+globals.currentUser.username"></span>
                     </div>
                 </ul>
@@ -46,31 +72,45 @@
     </div>
 </div>
 <div ui-view></div>
-<div class="fakeLoader"></div>
-<script src="js/lib/angular.min.js"></script>
-<script src="//unpkg.com/angular-ui-router/release/angular-ui-router.min.js"></script>
-<script src="//code.angularjs.org/1.6.0/angular-cookies.min.js"></script>
-<script src="js/lib/jquery-3.1.1.js"></script>
-<script src="js/lib/jquery.transit.js"></script>
-<script src="js/lib/ui-bootstrap-tpls-2.4.0.min.js"></script>
-<script src="//cdn.bootcss.com/fakeLoader/1.1.0/fakeLoader.js"></script>
-<script src="js/lib/bootstrap.js"></script>
-<script src="js/app.js"></script>
-<script src="js/login.js"></script>
-<script src="js/registration.js"></script>
-<script src="js/sessionService.js"></script>
-<script src="js/LoginService.js"></script>
-<script src="js/AuthenticationService.js"></script>
-<script src="js/list.js"></script>
-<script src="js/lib/jquery-ui.js"></script>
-<script src="js/lib/wow.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
-<script>
-    $(function () {
-        $('.navbar-collapse a').click(function () {
-            $('.navbar-collapse').collapse('hide');
-        })
-    })
-</script>
+<div class="toolbar">
+    <a href="javascript:" ui-sref="messageBoard" class="toolbar-item toolbar-item-feedback"></a>
+    <a href="javascript:" class="toolbar-item toolbar-item-app">
+        <span class="toolbar-layer"></span>
+    </a>
+    <a id="backTop" href="javascript:" class="toolbar-item toolbar-item-top"></a>
+</div>
+<p>111</p>
+<p>111</p>
+<p>111</p>
+<p>111</p>
+<p>111</p>
+<p>111</p>
+<p>111</p>
+<p>111</p>
+<p>111</p>
+<p>111</p>
+<p>111</p>
+<p>111</p>
+<p>111</p>
+<p>111</p>
+<p>111</p>
+<p>111</p>
+<p>111</p>
+<p>111</p>
+<p>111</p>
+<p>111</p>
+<p>111</p>
+<p>111</p>
+<p>111</p>
+<p>111</p>
+<p>111</p>
+<p>111</p>
+<p>111</p>
+<p>111</p>
+<p>111</p>
+<p>111</p>
+<p>111</p>
+<p>111</p>
+<p>111</p>
 </body>
 </html>

@@ -12,9 +12,11 @@
       <w>droppable</w>
       <w>elit</w>
       <w>glyphicon</w>
+      <w>goto</w>
       <w>htmls</w>
       <w>ipsum</w>
       <w>islogged</w>
+      <w>jpre</w>
       <w>keyname</w>
       <w>listbox</w>
       <w>lorem</w>
@@ -24,6 +26,8 @@
       <w>pageloading</w>
       <w>piclist</w>
       <w>pwcheck</w>
+      <w>textarea</w>
+      <w>txtarea</w>
       <w>unpkg</w>
       <w>userdata</w>
       <w>userhello</w>

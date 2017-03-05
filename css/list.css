@@ -1,41 +1,38 @@
 .projects {
-    margin-top: 5%;
+  margin-top: 5%;
 }
-
+.projects img {
+  z-index: 99999;
+}
 .projects .caption {
-    text-align: center;
+  text-align: center;
 }
-
 .cart .drag-section {
-    z-index: 1;
-    display: block;
-    height: 240px;
-    width: 80%;
-    margin: 0 auto;
-    color: #f89406;
-    text-align: center;
-    box-sizing: border-box;
-    border: 3px solid #faf2cc;
-    border-radius: 10px;
-    box-shadow: 3px 3px;
+  z-index: 1;
+  display: block;
+  height: 240px;
+  width: 80%;
+  margin: 0 auto;
+  color: #f89406;
+  text-align: center;
+  box-sizing: border-box;
+  border: 3px solid #faf2cc;
+  border-radius: 10px;
+  box-shadow: 3px 3px;
 }
-
 .cart .drag-section h1 {
-    line-height: 200px;
-    font-size: 1.3vw;
-    padding: 0;
+  line-height: 200px;
+  font-size: 1.3vw;
+  padding: 0;
 }
-
 .cart .list {
-    margin-top: 5%;
+  margin-top: 5%;
 }
-
 .cart .table {
-    width: 100%;
+  width: 100%;
 }
-
 .resize {
-    position: fixed;
-    top: 90%;
-    left: 90%;
+  position: fixed;
+  top: 90%;
+  left: 90%;
 }

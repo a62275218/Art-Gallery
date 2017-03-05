@@ -8,7 +8,7 @@ app.controller('SignUpCtrl', function ($scope, $http, $location) {
             alert('sign up success!');
             $location.path('/index')
         }
-    }
+    };
     $scope.insertData = function () {
         $http.post('registration.php', {
             'username': $scope.userdata.username,

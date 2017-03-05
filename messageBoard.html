@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Message Board</title>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/messageBoard.css">
+    <link rel="stylesheet" href="css/registration.css">
+</head>
+<body>
+<!--comment editing section-->
+<div class="comment">
+    <!--add class no-login if user hasn't logged in-->
+    <div class="comment-send" ng-class="{'no-login':!globals.currentUser.username}">
+        <div class="textarea-container">
+            <div class="baffle" ng-if="!globals.currentUser.username">Please &nbsp;<a class="btn btn-primary"
+                                                                                      data-toggle="modal"
+                                                                                      data-target="#myModal">Login</a>
+                &nbsp;Then make comment
+            </div>
+            <textarea id="textarea" cols="80" name="msg" rows="5"></textarea>
+            <button type="submit" class="comment-submit" ng-click="addComment()">Make Comment</button>
+        </div>
+    </div>
+    <!--comment list-->
+    <div class="comment-list" ng-repeat="comm in commentList.reverse()">
+        <div class="list-item reply-wrap">
+            <div class="user">{{comm.username}}</div>
+            <p class="text">{{comm.content}}</p>
+            <div class="info"><span class="time">{{comm.date}}</span></div>
+        </div>
+    </div>
+</div>
+<!--quick-login-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <ul class="nav nav-tabs" id="myTabs" role="tablist">
+                    <li role="presentation"><a href="#sign" aria-controls="profile" role="tab" data-toggle="tab">Sign
+                        Up</a></li>
+                    <li role="presentation" class="active"><a href="#login" aria-controls="home" role="tab"
+                                                              data-toggle="tab">Login</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane" id="sign">
+                        <!--sign up-->
+                        <form name="signUpForm" ng-submit="submitForm()">
+                            <div class="form-group" ng-class="{'has-success':signUpForm.username.$valid}">
+                                <label>User Name:</label>
+                                <input name="username" placeholder="4 to 16 characters" type="text" class="form-control"
+                                       ng-model="userdata.username" ng-minlength="4" ng-maxlength="16" required>
+                                <p class="fa fa-check input_result success" ng-if="signUpForm.username.$valid"></p>
+                                <p class="error"
+                                   ng-if="signUpForm.username.$error.required && signUpForm.username.$touched">User name
+                                    cannot be empty</p>
+                                <p class="error"
+                                   ng-if="(signUpForm.username.$error.minlength || signUpForm.username.$error.maxlength) && signUpForm.username.$touched">
+                                    User name should be between 4 and 16 characters</p>
+                            </div>
+                            <div class="form-group" ng-class="{'has-success':signUpForm.password.$valid}">
+                                <label>Password:</label>
+                                <input name="password" id="password" placeholder="6 to 12 characters" type="password"
+                                       class="form-control" ng-model="userdata.password" ng-minlength="6"
+                                       ng-maxlength="12" required>
+                                <p class="fa fa-check input_result success" ng-if="signUpForm.password.$valid"></p>
+                                <p class="error"
+                                   ng-if="signUpForm.password.$error.required && signUpForm.password.$touched">Password
+                                    cannot be empty</p>
+                                <p class="error"
+                                   ng-if="(signUpForm.password.$error.minlength || signUpForm.password.$error.maxlength) &&signUpForm.password.$touched">
+                                    Password should be between 6 and 12 characters</p>
+                            </div>
+                            <div class="form-group" ng-class="{'has-success':signUpForm.password2.$valid}">
+                                <label>Confirm Password:</label>
+                                <input name="password2" placeholder="re-enter password" type="password"
+                                       class="form-control" ng-model="userdata.password2" pw-check="password" required>
+                                <p class="fa fa-check input_result success" ng-if="signUpForm.password2.$valid"></p>
+                                <p class="error"
+                                   ng-if="signUpForm.password2.$error.pwcheck && signUpForm.password2.$touched">Password
+                                    doesn't match</p>
+                                <p class="error"
+                                   ng-if="signUpForm.password2.$error.required && signUpForm.password2.$touched">
+                                    Password cannot be empty</p>
+                            </div>
+                            <div class="form-group" ng-class="{'has-success':signUpForm.email.$valid}">
+                                <label>Email:</label>
+                                <input name="email" placeholder="Your email address" type="email" class="form-control"
+                                       ng-model="userdata.email" required>
+                                <p class="fa fa-check input_result success" ng-if="signUpForm.email.$valid"></p>
+                                <p class="error" ng-if="signUpForm.email.$error.required && signUpForm.email.$touched">
+                                    Email cannot be
+                                    empty</p>
+                                <p class="error" ng-if="signUpForm.email.$error.email && signUpForm.email.$touched">
+                                    Email is incorrect</p>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-primary" ng-disabled="!signUpForm.$valid"
+                                        ng-click="insertData()">Submit
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <!--login-->
+                    <div role="tabpanel" class="tab-pane active" id="login">
+                        <form name="loginForm">
+                            <div class="form-group">
+                                <label>User Name:</label>
+                                <input name="username" placeholder="Your username" type="text" class="form-control"
+                                       ng-model="username" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Password:</label>
+                                <input name="password" placeholder="Your password" type="password" class="form-control"
+                                       ng-model="password" required>
+                            </div>
+                            <button class="btn btn-success" ng-click="quickLogin()">Login</button>
+                            <br>
+                            <span>{{responseMessage}}</span>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<iframe id="quick-login" frameborder="no" border="0">
+    <html>
+
+    </html>
+</iframe>-->
+</body>
+</html>

@@ -1,0 +1,110 @@
+/*style for the message board*/
+
+.comment {
+  font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+  zoom: 1;
+  min-height: 100px;
+  width: 50%;
+  margin: 50px auto;
+  background: rgb(255, 255, 255);
+  //comment editing area
+  .comment-send .textarea-container {
+    position: relative;
+    margin-left: 85px;
+    margin-right: 190px;
+    textarea {
+      font-size: 12px;
+      display: inline-block;
+      box-sizing: border-box;
+      background-color: rgb(244, 245, 247);
+      color: rgb(85, 85, 85);
+      height: 65px;
+      line-height: normal;
+      width: 100%;
+      border: 1px solid rgb(229, 233, 239);
+      border-image: initial;
+      overflow: auto;
+      border-radius: 4px;
+      transition: 0s;
+      padding: 5px 10px;
+      resize: none;
+    }
+    .comment-submit {
+      width: 90px;
+      height: 64px;
+      position: absolute;
+      right: -110px;
+      top: 0px;
+      font-size: 14px;
+      color: rgb(255, 255, 255);
+      text-align: center;
+      min-width: 60px;
+      vertical-align: top;
+      cursor: pointer;
+      background-color: rgb(0, 161, 214);
+      padding: 4px 15px;
+      border-radius: 4px;
+      border: 1px solid rgb(0, 161, 214);
+      border-image: initial;
+      transition: 0.1s;
+    }
+  }
+  //the comment area style when user no logged in
+  .no-login {
+    .baffle {
+      display: block;
+      position: absolute;
+      width: 100%;
+      top: 0px;
+      line-height: 64px;
+      font-size: 12px;
+      text-align: center;
+      color: rgb(119, 119, 119);
+      background-color: rgb(229, 233, 239);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .textarea-container {
+      .comment-submit {
+        cursor: default;
+        background-color: rgb(229, 233, 239);
+        color: rgb(184, 192, 204);
+        border-color: rgb(229, 233, 239) !important;
+      }
+      textarea {
+        background-color: rgb(229, 233, 239);
+      }
+    }
+  }
+  //comment list
+  .comment-list {
+    position: relative;
+    margin-left: 85px;
+    padding: 22px 0 14px;
+    border-top: 1px solid #e5e9ef;
+    .list-item {
+      display: block;
+      .user {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 18px;
+        padding-bottom: 4px;
+        display: block;
+        word-wrap: break-word;
+      }
+      .info {
+        color: #99a2aa;
+        line-height: 26px;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+//quick login
+.modal-dialog {
+  margin: 300px auto;
+  .modal-content .modal-body .tab-content {
+    margin-top: 20px;
+  }
+}

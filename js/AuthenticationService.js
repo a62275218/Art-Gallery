@@ -14,7 +14,7 @@ app.factory('AuthenticationService', function ($http, $cookies, $rootScope) {
                 chr2 = input.charCodeAt(i++);
                 chr3 = input.charCodeAt(i++);
 
-                enc1 = chr1 >> 2
+                enc1 = chr1 >> 2;
                 enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
                 enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
                 enc4 = chr3 & 63;
@@ -78,13 +78,13 @@ app.factory('AuthenticationService', function ($http, $cookies, $rootScope) {
 
             return output;
         }
-    }
+    };
     var service = {};
     service.SetCredentials = SetCredentials;
     service.ClearCredentials = ClearCredentials;
 
     return service;
-
+    //set the uer credentials
     function SetCredentials(username, password) {
         var authdata = Base64.encode(username + ':' + password);
 
@@ -109,4 +109,4 @@ app.factory('AuthenticationService', function ($http, $cookies, $rootScope) {
         $cookies.remove('globals');
         $http.defaults.headers.common.Authorization = 'Basic';
     }
-})
+});
