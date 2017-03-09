@@ -1,11 +1,11 @@
-var app = angular.module('artGallery', ['ui.router', 'ui.bootstrap', 'ngCookies', 'ngAnimate']);
+var app = angular.module('artGallery', ['ui.router', 'ui.bootstrap', 'ngCookies', 'ngAnimate', 'ngMap']);
 app.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/home');
     $stateProvider
         .state('home', {
             url: '/home',
             templateUrl: 'home.html',
-            controller: 'LoginCtrl'
+            controller: 'HomeCtrl'
         })
         .state('login', {
             url: '/login',
@@ -40,9 +40,9 @@ app.run(function ($rootScope, $location, $cookies, LoginService, $http, $anchorS
         $location.hash('top');
         $anchorScroll();
         //block access when user not logged in
-        if (!$rootScope.globals.currentUser && toState.authorization) {
+        /*if (!$rootScope.globals.currentUser && toState.authorization) {
             $location.path('/login');
-        }
+         }*/
     });
     //document load function
     $(function () {

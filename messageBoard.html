@@ -23,7 +23,7 @@
         </div>
     </div>
     <!--comment list-->
-    <div class="comment-list" ng-repeat="comm in commentList.reverse()">
+    <div class="comment-list" ng-repeat="comm in commentList.slice().reverse()">
         <div class="list-item reply-wrap">
             <div class="user">{{comm.username}}</div>
             <p class="text">{{comm.content}}</p>

@@ -31,7 +31,7 @@ var turn = function (elem) {
 /*JSON to export all photos*/
 $.getJSON('data/imageData.json', function (data) {
     var wrap = $('#wrap');
-    var template = '<div class="photo photo-front" onclick="turn(this)" id="photo_index"> <div class="photo-wrap"> <div class="side side-front"> <p class="image"><img src="url" alt=""></p> <p class="caption">caption</p> </div> <div class="side side-back"> <p class="desc">desc</p> </div> </div> </div>'
+    var template = '<div class="photo photo-front" onclick="turn(this)" id="photo_index"> <div class="photo-wrap"> <div class="side side-front"> <p class="image"><img src="url" alt=""></p> <p class="img-cap">caption</p> </div> <div class="side side-back"> <p class="desc">desc</p> </div> </div> </div>'
     var htmls = [];
     var nav = [];
     $.each(data, function (i, item) {

@@ -1,5 +1,6 @@
 /*mobile device responsive design*/
 @import "parameter";
+
 @media screen and (max-width: 767px) {
   body {
     padding-top: @nav-height;
@@ -78,7 +79,7 @@
     }
     h2 {
       font-weight: bold;
-      font-size:20px;
+      font-size: 20px;
     }
     p {
       line-height: 15px;
@@ -96,3 +97,63 @@
     display: none;
   }
 }
+
+@media (min-width: 1200px) {
+  .category-list {
+    padding: 20px 0 10px 50px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .category-item {
+    width: 31% !important;
+    height: 76px !important;
+    margin: 0 1% 8px 0 !important;
+  }
+
+  .comment {
+    margin-top: 0 !important;
+    margin-left: 10% !important;
+    .comment-send .textarea-container {
+      margin: 0 auto !important;
+    }
+    .comment-list {
+      margin-left: 0 !important;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 980px) {
+  .category-item {
+    height: 150px !important;
+  }
+}
+
+@media screen and (min-width: 980px) and (max-width: 1200px) {
+  .category-item {
+    height: 150px !important;
+  }
+}
+
+@media (max-width: 1900px) {
+  .toolbar {
+    left: 95%;
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    -o-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+
+  .drag-section {
+    visibility: hidden;
+    height: 0 !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .option-set {
+    padding: 0;
+  }
+}
+

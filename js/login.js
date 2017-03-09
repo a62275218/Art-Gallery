@@ -1,4 +1,4 @@
-app.controller('LoginCtrl', ['$scope', '$anchorScroll', 'LoginService', '$location', function ($scope, $anchorScroll, LoginService, $location) {
+app.controller('LoginCtrl', ['$scope', '$anchorScroll', 'LoginService', '$location', function ($scope, $anchorScroll, LoginService) {
     $scope.login = function () {
         LoginService.login($scope, '/home');
     };
@@ -6,14 +6,6 @@ app.controller('LoginCtrl', ['$scope', '$anchorScroll', 'LoginService', '$locati
         LoginService.logout($scope);
         $('.navbar-collapse').collapse('hide');
     };
-    //scroll to the corresponding section
-    $scope.scrollToDiv = function (id, offset) {
-        $('html,body').animate({
-            scrollTop: $(id).offset().top - offset
-        }, 500);
-        return false
-    };
-
     /*$scope.gotoAnchor = function(x){
      //// always scroll by 80 extra pixels
      $anchorScroll.yOffset = 80;

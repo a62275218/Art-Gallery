@@ -5,6 +5,10 @@ body {
   font-family: 'Arial', sans-serif;
 }
 
+h2 {
+  font-weight: bold;
+}
+
 /*navigation bar*/
 .navbar-default {
   position: fixed;
@@ -126,9 +130,7 @@ body {
   &:nth-of-type(2) {
     background: #f1f1f1;
   }
-  h2 {
-    font-weight: bold;
-  }
+
   p {
     line-height: 25px;
     font-size: 20px;
@@ -237,4 +239,162 @@ body {
   -ms-transition: all 1s;
   -o-transition: all 1s;
   transition: all 1s
+}
+
+/*category section*/
+.category {
+  .container {
+    padding-top: 30px;
+    hr {
+      background-color: transparent;
+      background-image: url(../img/hr.png);
+      background-position: center center;
+      border: 0px none !important;
+      height: 5px;
+      width: 100%;
+      margin: 20px 0px;
+      background-repeat: no-repeat;
+    }
+    p {
+      color: #999999;
+      font-size: 16px;
+      font-weight: 300;
+      padding-bottom: 40px !important;
+      padding-top: 5px !important;
+    }
+    .option-set {
+      list-style: none;
+      width: 100%;
+      text-align: center;
+      li {
+        display: inline-block;
+        margin: 10px 4px;
+        text-transform: uppercase;
+        font-size: 12px;
+        .selected {
+          background-color: #1BB0CE;
+        }
+        a {
+          text-decoration: none;
+          padding: 10px;
+          background-color: #484848;
+          color: white;
+          -moz-border-radius: 3px;
+          -ms-border-radius: 3px;
+          -o-border-radius: 3px;
+          -webkit-border-radius: 3px;
+          border-radius: 3px;
+          -webkit-transition: all .3s ease-in-out;
+          -moz-transition: all .3s ease-in-out;
+          -o-transition: all .3s ease-in-out;
+          transition: all .3s ease-in-out;
+          &:hover {
+            background-color: #1BB0CE;
+          }
+        }
+      }
+    }
+    .category-list {
+      list-style: none;
+      width: 100%;
+      padding: 20px 0 10px 0;
+      margin: 0 auto;
+      -webkit-transition-property: height, width;
+      -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+      -o-transition-property: height, width;
+      transition-property: height, width;
+      -moz-border-radius: 3px;
+      -ms-border-radius: 3px;
+      -o-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      border-radius: 3px;
+      -webkit-transition-duration: 0.8s;
+      -moz-transition-duration: 0.8s;
+      -ms-transition-duration: 0.8s;
+      -o-transition-duration: 0.8s;
+      transition-duration: 0.8s;
+      li {
+        list-style-image: none;
+        display: inline-block;
+        text-align: -webkit-match-parent;
+        width: 22.7%;
+        margin: 0 1% 12px 0;
+        -moz-border-radius: 3px;
+        -ms-border-radius: 3px;
+        -o-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+        overflow: hidden;
+        position: relative;
+        height: 180px;
+        img {
+          width: 100%;
+          height: auto;
+          max-width: 100%;
+          vertical-align: middle;
+          border: 0;
+          -ms-interpolation-mode: bicubic;
+        }
+      }
+    }
+  }
+}
+
+/*contact information*/
+.contact {
+  background: #f1f1f1;
+  .container .row .col-md-6 .address {
+    background-color: #fff;
+    padding: 5% 10%;
+    display: block;
+    width: 70%;
+    margin: 40px auto;
+    font-size: 20px;
+    box-shadow: 10px 10px 10px grey;
+    border-radius: 10px;
+    .map {
+      line-height: 50px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #000000;
+
+    }
+    i {
+      margin-left: 0.5em;
+    }
+    .mail {
+      font-size: 14px;
+    }
+    .social-media-list {
+      margin-top: 7%;
+      a {
+        margin-right: 10px;
+        text-decoration: none;
+      }
+      .facebook {
+        color: #3b5998;
+      }
+      .twitter {
+        color: #41abe1;
+      }
+      .github {
+        color: #000000;
+      }
+    }
+  }
+  .map-container {
+    overflow: hidden;
+    margin-bottom: 5%;
+    #googleMap {
+      width: 100%;
+      height: 50%;
+    }
+  }
+}
+
+/*footer*/
+footer > p {
+  text-align: center;
+  line-height: 90px;
 }

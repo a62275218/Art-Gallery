@@ -1,3 +1,4 @@
+/*loading screen*/
 #loader-wrapper {
     position: fixed;
     top: 0;
@@ -7,6 +8,7 @@
     z-index: 10000;
 }
 
+/*loader icon*/
 #loader {
     display: block;
     position: relative;
@@ -99,16 +101,16 @@
     -webkit-transform: translateX(-100%); /* Chrome, Opera 15+, Safari 3.1+ */
     -ms-transform: translateX(-100%); /* IE 9 */
     transform: translateX(-100%); /* Firefox 16+, IE 10+, Opera */
-    -webkit-transition: all 0.3s 0.3s ease-out;
-    transition: all 0.3s 0.3s ease-out;
+    -webkit-transition: all 1s ease-out;
+    transition: all 1s ease-out;
 }
 
 .loaded #loader-wrapper .loader-section.section-right {
     -webkit-transform: translateX(100%); /* Chrome, Opera 15+, Safari 3.1+ */
     -ms-transform: translateX(100%); /* IE 9 */
     transform: translateX(100%); /* Firefox 16+, IE 10+, Opera */
-    -webkit-transition: all 0.3s 0.3s ease-out;
-    transition: all 0.3s 0.3s ease-out;
+    -webkit-transition: all 1s ease-out;
+    transition: all 1s ease-out;
 }
 
 .loaded #loader {

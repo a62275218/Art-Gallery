@@ -22,8 +22,11 @@ app.controller('listCtrl', function ($scope, $http, $timeout) {
     /*set the droppable section*/
     $('.drag-section').droppable({
         accept: ".pic",
-        activate: function () {
+        over: function () {
             $('.drag-section').css('color', '#00ff0d')
+        },
+        out: function () {
+            $('.drag-section').css('color', '#f89406')
         },
         deactivate: function () {
             $('.drag-section').css('color', '#f89406')

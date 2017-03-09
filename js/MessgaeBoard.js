@@ -38,15 +38,12 @@ app.controller('messageCtrl', ['$scope', '$rootScope', 'LoginService', '$locatio
         $('#myModal').on('shown.bs.modal', function () {
             $('#myInput').focus()
         });
-        $('#myTabs a').click(function (e) {
+        $('#myTabs').find('a').click(function (e) {
             e.preventDefault();
             $(this).tab('show')
         });
         $('.btn').click(function (e) {
             e.preventDefault();
-        })
-        $('.fade').click(function () {
-            $('#myModal').modal('hide')
-        })
+        });
     })
 }]);
