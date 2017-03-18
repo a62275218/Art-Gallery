@@ -14,11 +14,12 @@ app.controller('messageCtrl', ['$scope', '$rootScope', 'LoginService', '$locatio
             } else {
                 //add the comment to the list
                 var date = new Date();
+                var month = date.getMonth() + 1;
                 $scope.commentList.push({
                     content: txtarea.val(),
                     id: id,
                     username: $rootScope.globals.currentUser.username,
-                    date: date.getFullYear() + "-" + date.getMonth() + "-" + date.getDay() + " " + date.getHours() + ":" + date.getMinutes()
+                    date: date.getFullYear() + "-" + month + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes()
                 });
                 console.log($scope.commentList);
                 id++;

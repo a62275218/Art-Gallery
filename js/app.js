@@ -37,7 +37,6 @@ app.run(function ($rootScope, $location, $cookies, LoginService, $http, $anchorS
     $rootScope.$on('$stateChangeStart', function (event, toState) {
         console.log($rootScope.globals.currentUser);
         //scroll to top for each state
-        $location.hash('top');
         $anchorScroll();
         //block access when user not logged in
         /*if (!$rootScope.globals.currentUser && toState.authorization) {
@@ -46,7 +45,7 @@ app.run(function ($rootScope, $location, $cookies, LoginService, $http, $anchorS
     });
     //document load function
     $(function () {
-        //loading animation
+        //loading animationg
         setTimeout(function () {
             $('body').addClass('loaded');
             //initiate wow.js
