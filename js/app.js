@@ -43,9 +43,9 @@ app.run(function ($rootScope, $location, $cookies, LoginService, $http, $anchorS
             $location.path('/login');
          }*/
     });
-    //document load function
+    //document load function5X7I
     $(function () {
-        //loading animationg
+        //loading animation
         setTimeout(function () {
             $('body').addClass('loaded');
             //initiate wow.js
@@ -53,9 +53,6 @@ app.run(function ($rootScope, $location, $cookies, LoginService, $http, $anchorS
         }, 3000);
         //initially collapsed navbar
         $('.navbar-collapse').collapse('hide');
-        $('.carousel').carousel({
-            interval: 2000
-        });
         //click the scroll to top button
         $('#backTop').on('click', move);
         $(window).on('scroll', function () {

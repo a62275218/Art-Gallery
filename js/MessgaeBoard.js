@@ -1,8 +1,5 @@
-app.controller('messageCtrl', ['$scope', '$rootScope', 'LoginService', '$location', function ($scope, $rootScope, LoginService, $location) {
+app.controller('messageCtrl', ['$scope', '$rootScope', 'LoginService', '$http', function ($scope, $rootScope, LoginService, $http) {
     //initialize the comment scope
-    var id = 1;
-    $scope.commentList = [];
-    $scope.comment = {};
     $scope.addComment = function () {
         if (!$rootScope.globals.currentUser.username) {
             //do nothing if the user is logged in
@@ -13,7 +10,14 @@ app.controller('messageCtrl', ['$scope', '$rootScope', 'LoginService', '$locatio
                 alert('please input comment')
             } else {
                 //add the comment to the list
-                var date = new Date();
+                $http.post('postMessage.php', {
+                    'content': txtarea.val()
+                }).then(function success() {
+                    console.log("insert successfully");
+                }, function error() {
+                    console.log("insert failed");
+                });
+                /*var date = new Date();
                 var month = date.getMonth() + 1;
                 $scope.commentList.push({
                     content: txtarea.val(),
@@ -21,8 +25,15 @@ app.controller('messageCtrl', ['$scope', '$rootScope', 'LoginService', '$locatio
                     username: $rootScope.globals.currentUser.username,
                     date: date.getFullYear() + "-" + month + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes()
                 });
-                console.log($scope.commentList);
-                id++;
+                 id++;*/
+                $http.get('getMessage.php').then(
+                    function success(data) {
+                        console.log(data);
+                        $scope.commentList = data.data;
+                        console.log($scope.commentList)
+                    }, function error() {
+                        console.log('get error')
+                    });
                 txtarea.val('');
             }
         }
@@ -46,5 +57,14 @@ app.controller('messageCtrl', ['$scope', '$rootScope', 'LoginService', '$locatio
         $('.btn').click(function (e) {
             e.preventDefault();
         });
+        //fetch message data from database
+        $http.get('getMessage.php').then(
+            function success(data) {
+                console.log(data);
+                $scope.commentList = data.data;
+                console.log($scope.commentList)
+            }, function error() {
+                console.log('get error')
+            })
     })
 }]);

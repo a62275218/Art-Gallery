@@ -10,6 +10,10 @@ app.controller('HomeCtrl', ['$scope', 'NgMap', function ($scope, NgMap) {
         return false
     };
     $(function () {
+        //initiate carousel
+        $('.carousel').carousel({
+            interval: 2000
+        });
         //click to show or hide map
         var map = $('.map');
         map.on('click', function () {
@@ -30,8 +34,7 @@ app.controller('HomeCtrl', ['$scope', 'NgMap', function ($scope, NgMap) {
         });
         //box list animation
         $('category-list').isotope({
-            itemSelector: '.category-item',
-            layoutMode: 'fitRows'
+            itemSelector: '.category-item'
         });
         $('.option-set >li > a').on('click', function () {
             var selector = $(this).attr('data-filter');
@@ -52,8 +55,5 @@ app.controller('HomeCtrl', ['$scope', 'NgMap', function ($scope, NgMap) {
             thisoptionSets.find('.selected').removeClass('selected');
             thisss.addClass('selected');
         });
-    });
-    $(window).resize(function () {
-        $('.category-list').isotope('layout');
     });
 }]);

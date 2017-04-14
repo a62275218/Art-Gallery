@@ -2,6 +2,7 @@
   <dictionary name="Jake">
     <words>
       <w>adipisicing</w>
+      <w>adsladsl</w>
       <w>amet</w>
       <w>anim</w>
       <w>authdata</w>
@@ -9,6 +10,10 @@
       <w>clearfix</w>
       <w>consectetur</w>
       <w>crosshair</w>
+      <w>dbhost</w>
+      <w>dbname</w>
+      <w>dbpw</w>
+      <w>dbuser</w>
       <w>droppable</w>
       <w>elit</w>
       <w>github</w>
@@ -28,6 +33,7 @@
       <w>minlength</w>
       <w>mouseleave</w>
       <w>navbar</w>
+      <w>outp</w>
       <w>pageloading</w>
       <w>piclist</w>
       <w>pwcheck</w>
@@ -37,6 +43,7 @@
       <w>unpkg</w>
       <w>userdata</w>
       <w>userhello</w>
+      <w>userinfo</w>
     </words>
   </dictionary>
 </component>

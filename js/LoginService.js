@@ -13,7 +13,7 @@ app.factory('LoginService', function ($location, $http, sessionService, $rootSco
                 if (data.data && scope.username && scope.password) {
                     console.log(data.data);
                     $location.path(path);
-                    sessionService.set('uid', data.data);
+                    sessionService.set('uid', '1');
                     AuthenticationService.SetCredentials(scope.username, scope.password);
                 } else {
                     scope.responseMessage = 'username or password is wrong'

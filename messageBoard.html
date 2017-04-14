@@ -15,17 +15,17 @@
         <div class="textarea-container">
             <div class="baffle" ng-if="!globals.currentUser.username">Please &nbsp;<a class="btn btn-primary"
                                                                                       data-toggle="modal"
-                                                                                      data-target="#myModal">Login</a>
-                &nbsp;Then make comment
+                                                                                      data-target="#myModal">Login</a>&nbsp;Then
+                make comment
             </div>
             <textarea id="textarea" cols="80" name="msg" rows="5"></textarea>
             <button type="submit" class="comment-submit" ng-click="addComment()">Make Comment</button>
         </div>
     </div>
     <!--comment list-->
-    <div class="comment-list" ng-repeat="comm in commentList.slice().reverse()">
+    <div class="comment-list" ng-repeat="comm in commentList.messages">
         <div class="list-item reply-wrap">
-            <div class="user">{{comm.username}}</div>
+            <div class="user">{{comm.uid}}</div>
             <p class="text">{{comm.content}}</p>
             <div class="info"><span class="time">{{comm.date}}</span></div>
         </div>
